@@ -3,10 +3,9 @@
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn uber [_]
-  (let [version    (random-uuid)
-        target-dir "target"
+  (let [target-dir "target"
         class-dir  "target/classes"
-        uber-file  (format "target/pear-%s-uber.jar" version)
+        uber-file  "target/pear-uber.jar"
         basis      (b/create-basis {:project "deps.edn"})]
     (b/delete {:path target-dir})
     (b/copy-dir {:src-dirs   ["src" "resources"]
